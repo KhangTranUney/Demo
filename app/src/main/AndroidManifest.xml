@@ -94,9 +94,34 @@
             </intent-filter>
         </activity>
 
+        <!--
+            CustomTabActivity hosts Custom Tabs (via Chrome's CustomTabsActivity).
+
+            When the embedded web page navigates to a custom-scheme URL (e.g.
+            demoapp://callback?token=...&from=cct), Chrome fires an intent with
+            FLAG_ACTIVITY_NEW_TASK to open the corresponding app handler.
+
+            Without launchMode="singleTop", Android creates a brand-new instance
+            of CustomTabActivity — triggering onCreate() again, destroying the
+            old instance, and losing all its state.  The existing onNewIntent()
+            override never fires.
+
+            With launchMode="singleTop":
+              - If an instance of CustomTabActivity already exists at the top of
+                the task stack, Android reuses it and delivers the new intent via
+                onNewIntent() instead of creating a duplicate.
+              - The existing instance keeps its state; the Compose recomposition
+                picks up the updated deepLinkData via the mutableStateOf.
+              - If no instance exists, a new one is created normally.
+
+            The matching intent-filter (action=VIEW, category=DEFAULT|BROWSABLE,
+            data scheme=demoapp) is what Android uses to route the URL to this
+            activity in the first place.
+        -->
         <activity
             android:name=".customtab.CustomTabActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.Demo">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
