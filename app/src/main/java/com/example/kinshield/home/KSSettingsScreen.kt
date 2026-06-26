@@ -31,6 +31,7 @@ fun KSSettingsScreen(
     onSignOut: () -> Unit,
     onLeave: () -> Unit,
     onOpenFamilyManagement: () -> Unit,
+    onProtectThisDevice: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -44,6 +45,26 @@ fun KSSettingsScreen(
             Column(modifier = Modifier.padding(16.dp)) {
                 SectionHeader("Manage This Device")
                 SectionItem("Notification settings") { /* TODO */ }
+            }
+        }
+
+        if (role == KSRole.FAMILY_MANAGER) {
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    SectionHeader("Protect This Device")
+                    Text(
+                        text = "Turn this device into a protected Family Device. Your Family Manager data will be cleared and replaced with device-level safeguards.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Button(
+                        onClick = onProtectThisDevice,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Protect This Device")
+                    }
+                }
             }
         }
 

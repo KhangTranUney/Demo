@@ -166,6 +166,13 @@
 
             <activity
             android:name="com.example.kinshield.familymanagement.KSFamilyManagementActivity"
+            android:noHistory="true"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
+
+            <activity
+            android:name="com.example.kinshield.devicesetup.KSDeviceSetupActivity"
             android:exported="false"
             android:theme="@style/Theme.Demo" />
 

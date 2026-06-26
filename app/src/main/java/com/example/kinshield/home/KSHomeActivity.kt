@@ -97,6 +97,9 @@ class KSHomeActivity : KSBaseActivity() {
                     onOpenFamilyManagement = {
                         startActivity(Intent(this@KSHomeActivity, com.example.kinshield.familymanagement.KSFamilyManagementActivity::class.java))
                     },
+                    onProtectThisDevice = {
+                        startActivity(Intent(this@KSHomeActivity, com.example.kinshield.devicesetup.KSDeviceSetupActivity::class.java))
+                    },
                     modifier = Modifier.padding(innerPadding)
                 )
                 else -> Box(
