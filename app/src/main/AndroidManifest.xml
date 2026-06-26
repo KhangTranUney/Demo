@@ -37,6 +37,10 @@
             android:name=".sms.SmsActivity"
             android:exported="false"
             android:theme="@style/Theme.Demo" />
+        <activity
+            android:name=".snackbar.SnackbarActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
 
         <!-- Required component 1: SMS_DELIVER receiver -->
         <receiver
