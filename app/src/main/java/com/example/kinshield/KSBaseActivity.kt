@@ -5,8 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
+import com.example.kinshield.data.KSEvent
+import com.example.kinshield.data.KSEventHandler
+import com.example.kinshield.data.KSLocalStorage
 import com.example.kinshield.easteregg.KSEasterEggOverlay
 import com.example.ui.theme.DemoTheme
+import java.util.UUID
 
 abstract class KSBaseActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +26,15 @@ abstract class KSBaseActivity : ComponentActivity() {
         }
     }
 
-    open fun onEasterEggAction(id: String) {
-        // Override in subclasses to handle actions
+    private fun onEasterEggAction(id: String) {
+        val storage = KSLocalStorage(this)
+        when (id) {
+            "family_manager_code" -> {
+                storage.familyDeviceToken = UUID.randomUUID().toString()
+                storage.completeOnboarding = true
+                KSEventHandler.emit(KSEvent.FamilyDeviceCodeEntered)
+            }
+        }
     }
 
     @Composable

@@ -9,8 +9,6 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.kinshield.KSBaseActivity
-import com.example.kinshield.data.KSEvent
-import com.example.kinshield.data.KSEventHandler
 import com.example.kinshield.data.KSLocalStorage
 import com.example.kinshield.data.KSRole
 import com.example.kinshield.home.KSHomeActivity
@@ -29,14 +27,6 @@ class KSOnboardingActivity : KSBaseActivity() {
             startActivity(intent)
         }
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onEasterEggAction(id: String) {
-        if (id == "family_manager_code") {
-            storage.familyDeviceToken = UUID.randomUUID().toString()
-            storage.completeOnboarding = true
-            KSEventHandler.emit(KSEvent.FamilyDeviceCodeEntered)
-        }
     }
 
     @Composable
