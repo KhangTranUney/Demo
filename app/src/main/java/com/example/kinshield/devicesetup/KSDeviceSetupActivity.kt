@@ -92,11 +92,6 @@ private fun DeviceSetupCodeScreen(onConfirm: () -> Unit, onBack: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Setup Code",
-                style = MaterialTheme.typography.headlineSmall
-            )
-            Spacer(modifier = Modifier.height(24.dp))
-            Text(
                 text = code,
                 style = MaterialTheme.typography.displayLarge,
                 textAlign = TextAlign.Center
