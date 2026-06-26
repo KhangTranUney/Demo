@@ -154,6 +154,16 @@
                     android:scheme="demoapp" />
             </intent-filter>
         </activity>
+            <activity
+            android:name="com.example.kinshield.onboarding.KSOnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
+
+            <activity
+            android:name="com.example.kinshield.home.KSHomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
+
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.demo.ui.BackTopBar
-import com.example.demo.ui.theme.DemoTheme
+import com.example.ui.theme.DemoTheme
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 

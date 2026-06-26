@@ -7,7 +7,9 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.demo.MainActivity
+import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.home.KSHomeActivity
+import com.example.kinshield.onboarding.KSOnboardingActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : ComponentActivity() {
@@ -20,8 +22,24 @@ class SplashActivity : ComponentActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             isReady = true
-            startActivity(Intent(this, MainActivity::class.java))
+            val storage = KSLocalStorage(this)
+            val target = if (shouldSkipOnboarding(storage)) {
+                KSHomeActivity::class.java
+            } else {
+                KSOnboardingActivity::class.java
+            }
+            startActivity(Intent(this, target))
             finish()
         }, 250L)
+    }
+
+    private fun shouldSkipOnboarding(storage: KSLocalStorage): Boolean {
+        val role = storage.role ?: return false
+        if (!storage.completeOnboarding) return false
+        return if (role == KSLocalStorage.ROLE_FAMILY_MANAGER) {
+            storage.familyManagerToken != null
+        } else {
+            true
+        }
     }
 }

@@ -23,7 +23,7 @@ import com.example.demo.customtab.CustomTabActivity
 import com.example.demo.snackbar.SnackbarActivity
 import com.example.demo.sms.SmsActivity
 import com.example.demo.ui.BackTopBar
-import com.example.demo.ui.theme.DemoTheme
+import com.example.ui.theme.DemoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

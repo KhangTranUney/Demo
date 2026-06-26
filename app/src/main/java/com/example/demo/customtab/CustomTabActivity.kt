@@ -27,7 +27,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.example.demo.ui.BackTopBar
-import com.example.demo.ui.theme.DemoTheme
+import com.example.ui.theme.DemoTheme
 
 private const val NETLIFY_DEMO_URL = "https://grand-banoffee-81654c.netlify.app/"
 //private const val NETLIFY_DEMO_URL = "https://incomparable-pegasus-c826a7.netlify.app/"
