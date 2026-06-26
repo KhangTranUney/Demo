@@ -25,16 +25,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.data.KSRole
 import com.example.kinshield.ui.KSTopBar
 
 @Composable
 fun KSRoleSelectionScreen(
-    onRoleSelected: (String) -> Unit,
+    onRoleSelected: (KSRole) -> Unit,
     onBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var selected by remember { mutableStateOf<String?>(null) }
+    var selected by remember { mutableStateOf<KSRole?>(null) }
 
     Scaffold(
         modifier = modifier,
@@ -54,18 +54,18 @@ fun KSRoleSelectionScreen(
                 verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
             ) {
                 RoleCard(
-                    role = KSLocalStorage.ROLE_FAMILY_MANAGER,
+                    role = KSRole.FAMILY_MANAGER,
                     title = "Family Manager",
                     description = "Monitor and manage screen time, apps, and web access for your family members.",
-                    selected = selected == KSLocalStorage.ROLE_FAMILY_MANAGER,
-                    onClick = { selected = KSLocalStorage.ROLE_FAMILY_MANAGER }
+                    selected = selected == KSRole.FAMILY_MANAGER,
+                    onClick = { selected = KSRole.FAMILY_MANAGER }
                 )
                 RoleCard(
-                    role = KSLocalStorage.ROLE_FAMILY_DEVICE,
+                    role = KSRole.FAMILY_DEVICE,
                     title = "Family Device",
                     description = "A device assigned to a family member, supervised by the Family Manager.",
-                    selected = selected == KSLocalStorage.ROLE_FAMILY_DEVICE,
-                    onClick = { selected = KSLocalStorage.ROLE_FAMILY_DEVICE }
+                    selected = selected == KSRole.FAMILY_DEVICE,
+                    onClick = { selected = KSRole.FAMILY_DEVICE }
                 )
             }
             Button(
@@ -83,7 +83,7 @@ fun KSRoleSelectionScreen(
 
 @Composable
 private fun RoleCard(
-    role: String,
+    role: KSRole,
     title: String,
     description: String,
     selected: Boolean,

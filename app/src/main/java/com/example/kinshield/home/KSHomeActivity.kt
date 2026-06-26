@@ -1,9 +1,6 @@
 package com.example.kinshield.home
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -25,8 +22,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.kinshield.KSBaseActivity
 import com.example.kinshield.data.KSLocalStorage
-import com.example.ui.theme.DemoTheme
 
 private data class Tab(val title: String, val icon: ImageVector)
 
@@ -37,44 +34,38 @@ private val tabs = listOf(
     Tab("Settings", Icons.Filled.Settings),
 )
 
-class KSHomeActivity : ComponentActivity() {
+class KSHomeActivity : KSBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         KSLocalStorage(this).completeOnboarding = true
-        enableEdgeToEdge()
-        setContent {
-            DemoTheme {
-                KSHomeScreen()
-            }
-        }
+        super.onCreate(savedInstanceState)
     }
-}
 
-@Composable
-private fun KSHomeScreen() {
-    var selectedTab by remember { mutableIntStateOf(0) }
+    @Composable
+    override fun KSContent() {
+        var selectedTab by remember { mutableIntStateOf(0) }
 
-    Scaffold(
-        bottomBar = {
-            NavigationBar {
-                tabs.forEachIndexed { index, tab ->
-                    NavigationBarItem(
-                        selected = selectedTab == index,
-                        onClick = { selectedTab = index },
-                        icon = { Icon(tab.icon, contentDescription = tab.title) },
-                        label = { Text(tab.title) }
-                    )
+        Scaffold(
+            bottomBar = {
+                NavigationBar {
+                    tabs.forEachIndexed { index, tab ->
+                        NavigationBarItem(
+                            selected = selectedTab == index,
+                            onClick = { selectedTab = index },
+                            icon = { Icon(tab.icon, contentDescription = tab.title) },
+                            label = { Text(tab.title) }
+                        )
+                    }
                 }
             }
-        }
-    ) { innerPadding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(tabs[selectedTab].title)
+        ) { innerPadding ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(tabs[selectedTab].title)
+            }
         }
     }
 }

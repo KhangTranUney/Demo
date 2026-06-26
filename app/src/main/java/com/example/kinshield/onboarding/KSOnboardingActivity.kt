@@ -2,43 +2,41 @@ package com.example.kinshield.onboarding
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.example.kinshield.KSBaseActivity
 import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.data.KSRole
 import com.example.kinshield.home.KSHomeActivity
-import com.example.ui.theme.DemoTheme
 import kotlinx.serialization.Serializable
 import java.util.UUID
 
-class KSOnboardingActivity : ComponentActivity() {
+class KSOnboardingActivity : KSBaseActivity() {
+    private lateinit var storage: KSLocalStorage
+    private lateinit var onFinish: () -> Unit
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val storage = KSLocalStorage(this)
-        enableEdgeToEdge()
-        setContent {
-            DemoTheme {
-                val startRoute = remember { if (storage.seenWelcome) RoleSelectionRoute else WelcomeRoute }
-                val onFinish: () -> Unit = remember {
-                    {
-                        val intent = Intent(this@KSOnboardingActivity, KSHomeActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
-                    }
-                }
-                KSOnboardingScreen(
-                    storage = storage,
-                    startRoute = startRoute,
-                    onFinish = onFinish,
-                )
-            }
+        storage = KSLocalStorage(this)
+        onFinish = {
+            val intent = Intent(this, KSHomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
+        super.onCreate(savedInstanceState)
+    }
+
+    @Composable
+    override fun KSContent() {
+        val startRoute = remember { if (storage.seenWelcome) RoleSelectionRoute else WelcomeRoute }
+        KSOnboardingScreen(
+            storage = storage,
+            startRoute = startRoute,
+            onFinish = onFinish,
+        )
     }
 }
 
@@ -72,8 +70,8 @@ private fun KSOnboardingScreen(
                     onRoleSelected = { role ->
                         storage.role = role
                         when (role) {
-                            KSLocalStorage.ROLE_FAMILY_MANAGER -> backStack.add(SignInRoute)
-                            KSLocalStorage.ROLE_FAMILY_DEVICE -> backStack.add(ShareCodeRoute)
+                            KSRole.FAMILY_MANAGER -> backStack.add(SignInRoute)
+                            KSRole.FAMILY_DEVICE -> backStack.add(ShareCodeRoute)
                         }
                     },
                     onBack = { backStack.removeLastOrNull() }

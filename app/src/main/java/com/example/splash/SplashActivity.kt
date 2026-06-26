@@ -8,6 +8,7 @@ import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.data.KSRole
 import com.example.kinshield.home.KSHomeActivity
 import com.example.kinshield.onboarding.KSOnboardingActivity
 
@@ -36,7 +37,7 @@ class SplashActivity : ComponentActivity() {
     private fun shouldSkipOnboarding(storage: KSLocalStorage): Boolean {
         val role = storage.role ?: return false
         if (!storage.completeOnboarding) return false
-        return if (role == KSLocalStorage.ROLE_FAMILY_MANAGER) {
+        return if (role == KSRole.FAMILY_MANAGER) {
             storage.familyManagerToken != null
         } else {
             true

@@ -12,9 +12,12 @@ class KSLocalStorage(context: Context) {
         get() = prefs.getBoolean(KEY_SEEN_WELCOME, false)
         set(value) = prefs.edit { putBoolean(KEY_SEEN_WELCOME, value) }
 
-    var role: String?
-        get() = prefs.getString(KEY_ROLE, null)
-        set(value) = prefs.edit { putString(KEY_ROLE, value) }
+    var role: KSRole?
+        get() {
+            val key = prefs.getString(KEY_ROLE, null) ?: return null
+            return KSRole.entries.find { it.storageKey == key }
+        }
+        set(value) = prefs.edit { putString(KEY_ROLE, value?.storageKey) }
 
     var completeOnboarding: Boolean
         get() = prefs.getBoolean(KEY_COMPLETE_ONBOARDING, false)
@@ -25,9 +28,6 @@ class KSLocalStorage(context: Context) {
         set(value) = prefs.edit { putString(KEY_FAMILY_MANAGER_TOKEN, value) }
 
     companion object {
-        const val ROLE_FAMILY_MANAGER = "family_manager"
-        const val ROLE_FAMILY_DEVICE = "family_device"
-
         private const val PREFS_NAME = "kinshield_prefs"
         private const val KEY_SEEN_WELCOME = "seen_welcome"
         private const val KEY_ROLE = "role"
