@@ -28,10 +28,12 @@ import com.example.kinshield.data.KSRole
 @Composable
 fun KSSettingsScreen(
     role: KSRole,
+    hasDeviceToken: Boolean,
     onSignOut: () -> Unit,
     onLeave: () -> Unit,
     onOpenFamilyManagement: () -> Unit,
     onProtectThisDevice: () -> Unit,
+    onControlThisDevice: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -43,26 +45,46 @@ fun KSSettingsScreen(
     ) {
         Card(modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(16.dp)) {
-                SectionHeader("Manage This Device")
+                SectionHeader("Device Settings")
                 SectionItem("Notification settings") { /* TODO */ }
             }
         }
 
         if (role == KSRole.FAMILY_MANAGER) {
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    SectionHeader("Protect This Device")
-                    Text(
-                        text = "Turn this device into a protected Family Device. Your Family Manager data will be cleared and replaced with device-level safeguards.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                    Button(
-                        onClick = onProtectThisDevice,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text("Protect This Device")
+            if (hasDeviceToken) {
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        SectionHeader("Control Data of This Device")
+                        Text(
+                            text = "Manage monitoring, call blocking, safe websites, and more for this protected device.",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Button(
+                            onClick = onControlThisDevice,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text("Control")
+                        }
+                    }
+                }
+            } else {
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        SectionHeader("Protect This Device")
+                        Text(
+                            text = "Turn this device into a protected Family Device. Your Family Manager data will be cleared and replaced with device-level safeguards.",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Button(
+                            onClick = onProtectThisDevice,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text("Protect This Device")
+                        }
                     }
                 }
             }

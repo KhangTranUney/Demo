@@ -1,6 +1,5 @@
 package com.example.kinshield.devicesetup
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -26,8 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.kinshield.data.KSLocalStorage
-import com.example.kinshield.data.KSRole
-import com.example.kinshield.home.KSHomeActivity
 import com.example.kinshield.ui.KSTopBar
 import com.example.ui.theme.DemoTheme
 import kotlin.random.Random
@@ -41,14 +38,7 @@ class KSDeviceSetupActivity : ComponentActivity() {
             DemoTheme {
                 KSDeviceSetupScreen(
                     onComplete = {
-                        val storage = KSLocalStorage(this)
-                        storage.familyManagerToken = null
-                        storage.role = KSRole.FAMILY_DEVICE
-                        storage.familyDeviceToken = UUID.randomUUID().toString()
-                        storage.completeOnboarding = true
-                        val intent = Intent(this, KSHomeActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
+                        KSLocalStorage(this).familyDeviceToken = UUID.randomUUID().toString()
                         finish()
                     },
                     onBack = { finish() }
@@ -132,7 +122,7 @@ private fun DeviceSetupCompleteScreen(onComplete: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 Text(
-                    text = "This device will be set up as a protected Family Device. The Family Manager settings on this device will be cleared and replaced with device-level protection.",
+                    text = "Your device will now be monitored and protected by KinShield. You can now control data of this device from the Settings screen.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

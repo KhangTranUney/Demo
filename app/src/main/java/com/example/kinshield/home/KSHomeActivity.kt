@@ -50,6 +50,7 @@ class KSHomeActivity : KSBaseActivity() {
     override fun KSContent() {
         var selectedTab by remember { mutableIntStateOf(0) }
         val role = remember { storage.role ?: KSRole.FAMILY_DEVICE }
+        val hasDeviceToken = storage.familyDeviceToken != null
 
         Scaffold(
             topBar = {
@@ -82,6 +83,7 @@ class KSHomeActivity : KSBaseActivity() {
                 )
                 3 -> KSSettingsScreen(
                     role = role,
+                    hasDeviceToken = hasDeviceToken,
                     onSignOut = {
                         storage.clearAll()
                         val intent = Intent(this@KSHomeActivity, com.example.kinshield.onboarding.KSOnboardingActivity::class.java)
@@ -99,6 +101,9 @@ class KSHomeActivity : KSBaseActivity() {
                     },
                     onProtectThisDevice = {
                         startActivity(Intent(this@KSHomeActivity, com.example.kinshield.devicesetup.KSDeviceSetupActivity::class.java))
+                    },
+                    onControlThisDevice = {
+                        startActivity(Intent(this@KSHomeActivity, com.example.kinshield.familymanagement.KSFamilyManagementActivity::class.java))
                     },
                     modifier = Modifier.padding(innerPadding)
                 )
