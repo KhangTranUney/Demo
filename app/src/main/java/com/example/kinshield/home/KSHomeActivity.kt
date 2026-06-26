@@ -88,7 +88,12 @@ class KSHomeActivity : KSBaseActivity() {
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     },
-                    onLeave = { /* TODO */ },
+                    onLeave = {
+                        storage.clearAll()
+                        val intent = Intent(this@KSHomeActivity, com.example.kinshield.onboarding.KSOnboardingActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    },
                     modifier = Modifier.padding(innerPadding)
                 )
                 else -> Box(
