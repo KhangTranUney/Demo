@@ -70,7 +70,7 @@ private fun CodeEntryScreen(
 
     Scaffold(
         topBar = {
-            KSTopBar(title = "Family Management", showBack = false)
+            KSTopBar(title = "Family Management", showBack = true, onBack = onClose)
         }
     ) { innerPadding ->
         Column(
@@ -117,13 +117,6 @@ private fun CodeEntryScreen(
             ) {
                 Text("Submit")
             }
-            Spacer(modifier = Modifier.height(16.dp))
-            Button(
-                onClick = onClose,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text("Close")
-            }
         }
     }
 }
@@ -132,7 +125,7 @@ private fun CodeEntryScreen(
 private fun FamilyManagementContent(onClose: () -> Unit) {
     Scaffold(
         topBar = {
-            KSTopBar(title = "Family Management", showBack = false)
+            KSTopBar(title = "Family Management", showBack = true, onBack = onClose)
         }
     ) { innerPadding ->
         Column(
@@ -143,61 +136,38 @@ private fun FamilyManagementContent(onClose: () -> Unit) {
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    ManagementSectionItem("Modify Devices", "View and manage paired devices") { }
-                }
-            }
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    ManagementSectionItem("Call Block List", "Manage blocked and allowed phone numbers") { }
-                }
-            }
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    ManagementSectionItem("Safe Websites", "Manage allowed and blocked websites") { }
-                }
-            }
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    ManagementSectionItem("Screen Time Limits", "Set daily screen time restrictions") { }
-                }
-            }
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    ManagementSectionItem("App Restrictions", "Manage allowed and blocked apps") { }
-                }
-            }
-            Button(
-                onClick = onClose,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text("Close")
-            }
+            ManagementSectionCard("Modify Devices", "View and manage paired devices") { }
+            ManagementSectionCard("Call Block List", "Manage blocked and allowed phone numbers") { }
+            ManagementSectionCard("Safe Websites", "Manage allowed and blocked websites") { }
+            ManagementSectionCard("Screen Time Limits", "Set daily screen time restrictions") { }
+            ManagementSectionCard("App Restrictions", "Manage allowed and blocked apps") { }
         }
     }
 }
 
 @Composable
-private fun ManagementSectionItem(title: String, description: String, onClick: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Column(modifier = Modifier.weight(1f)) {
-            Text(text = title, style = MaterialTheme.typography.titleSmall)
-            Text(
-                text = description,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+private fun ManagementSectionCard(title: String, description: String, onClick: () -> Unit) {
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(text = title, style = MaterialTheme.typography.titleSmall)
+                Text(
+                    text = description,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
-        Icon(
-            imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurfaceVariant
-        )
     }
 }
