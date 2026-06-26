@@ -31,6 +31,10 @@ class KSLocalStorage(context: Context) {
         get() = prefs.getString(KEY_FAMILY_DEVICE_TOKEN, null)
         set(value) = prefs.edit { putString(KEY_FAMILY_DEVICE_TOKEN, value) }
 
+    fun clearAll() {
+        prefs.edit { clear() }
+    }
+
     companion object {
         private const val PREFS_NAME = "kinshield_prefs"
         private const val KEY_SEEN_WELCOME = "seen_welcome"

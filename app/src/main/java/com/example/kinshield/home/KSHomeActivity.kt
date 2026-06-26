@@ -1,5 +1,6 @@
 package com.example.kinshield.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -81,7 +82,12 @@ class KSHomeActivity : KSBaseActivity() {
                 )
                 3 -> KSSettingsScreen(
                     role = role,
-                    onSignOut = { /* TODO */ },
+                    onSignOut = {
+                        storage.clearAll()
+                        val intent = Intent(this@KSHomeActivity, com.example.kinshield.onboarding.KSOnboardingActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    },
                     onLeave = { /* TODO */ },
                     modifier = Modifier.padding(innerPadding)
                 )
