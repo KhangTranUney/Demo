@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import com.example.kinshield.data.KSEvent
 import com.example.kinshield.data.KSEventHandler
 import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.easteregg.KSEasterEggActionId
 import com.example.kinshield.easteregg.KSEasterEggOverlay
 import com.example.ui.theme.DemoTheme
 import java.util.UUID
@@ -26,10 +27,10 @@ abstract class KSBaseActivity : ComponentActivity() {
         }
     }
 
-    private fun onEasterEggAction(id: String) {
+    private fun onEasterEggAction(id: KSEasterEggActionId) {
         val storage = KSLocalStorage(this)
         when (id) {
-            "family_manager_code" -> {
+            KSEasterEggActionId.FAMILY_MANAGER_CODE_ENTERED -> {
                 storage.familyDeviceToken = UUID.randomUUID().toString()
                 storage.completeOnboarding = true
                 KSEventHandler.emit(KSEvent.FamilyDeviceCodeEntered)

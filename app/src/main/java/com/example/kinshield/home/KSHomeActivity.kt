@@ -48,17 +48,15 @@ class KSHomeActivity : KSBaseActivity() {
     @Composable
     override fun KSContent() {
         var selectedTab by remember { mutableIntStateOf(0) }
-        val role = remember { storage.role }
+        val role = remember { storage.role ?: KSRole.FAMILY_DEVICE }
 
         Scaffold(
             topBar = {
                 KSTopBar(
                     title = "KinShield",
-                    description = role?.let { r ->
-                        when (r) {
-                            KSRole.FAMILY_MANAGER -> "Family Manager"
-                            KSRole.FAMILY_DEVICE -> "Family Device"
-                        }
+                    description = when (role) {
+                        KSRole.FAMILY_MANAGER -> "Family Manager"
+                        KSRole.FAMILY_DEVICE -> "Family Device"
                     },
                     showBack = false
                 )
@@ -76,13 +74,25 @@ class KSHomeActivity : KSBaseActivity() {
                 }
             }
         ) { innerPadding ->
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(tabs[selectedTab].title)
+            when (selectedTab) {
+                1 -> KSInboxScreen(
+                    role = role,
+                    modifier = Modifier.padding(innerPadding)
+                )
+                3 -> KSSettingsScreen(
+                    role = role,
+                    onSignOut = { /* TODO */ },
+                    onLeave = { /* TODO */ },
+                    modifier = Modifier.padding(innerPadding)
+                )
+                else -> Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(tabs[selectedTab].title)
+                }
             }
         }
     }

@@ -16,22 +16,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 private data class EasterEggAction(
-    val id: String,
+    val id: KSEasterEggActionId,
     val label: String,
-    val description: String,
 )
 
 private val actions = listOf(
     EasterEggAction(
-        id = "family_manager_code",
+        id = KSEasterEggActionId.FAMILY_MANAGER_CODE_ENTERED,
         label = "Family Manager entered the code",
-        description = "Simulate action that Family Manager enter the code of Family device..."
     ),
 )
 
 @Composable
 fun KSEasterEggDialog(
-    onAction: (id: String) -> Unit,
+    onAction: (id: KSEasterEggActionId) -> Unit,
     onDismiss: () -> Unit
 ) {
     AlertDialog(
@@ -51,7 +49,6 @@ fun KSEasterEggDialog(
                     ) {
                         ListItem(
                             headlineContent = { Text(action.label) },
-                            supportingContent = { Text(action.description) },
                             leadingContent = { Icons.Filled.Key }
                         )
                     }

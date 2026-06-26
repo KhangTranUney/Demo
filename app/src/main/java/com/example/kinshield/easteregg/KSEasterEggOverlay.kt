@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun KSEasterEggOverlay(
     content: @Composable () -> Unit,
-    onAction: (String) -> Unit,
+    onAction: (KSEasterEggActionId) -> Unit,
     modifier: Modifier = Modifier
 ) {
     var showDialog by remember { mutableStateOf(false) }
