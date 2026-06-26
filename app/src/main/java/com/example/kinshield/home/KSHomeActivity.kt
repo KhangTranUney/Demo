@@ -94,6 +94,9 @@ class KSHomeActivity : KSBaseActivity() {
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     },
+                    onOpenFamilyManagement = {
+                        startActivity(Intent(this@KSHomeActivity, com.example.kinshield.familymanagement.KSFamilyManagementActivity::class.java))
+                    },
                     modifier = Modifier.padding(innerPadding)
                 )
                 else -> Box(

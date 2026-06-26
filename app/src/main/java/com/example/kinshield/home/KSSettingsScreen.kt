@@ -4,8 +4,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -28,6 +30,7 @@ fun KSSettingsScreen(
     role: KSRole,
     onSignOut: () -> Unit,
     onLeave: () -> Unit,
+    onOpenFamilyManagement: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -41,6 +44,26 @@ fun KSSettingsScreen(
             Column(modifier = Modifier.padding(16.dp)) {
                 SectionHeader("Manage This Device")
                 SectionItem("Notification settings") { /* TODO */ }
+            }
+        }
+
+        if (role == KSRole.FAMILY_DEVICE) {
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    SectionHeader("Family Management")
+                    Text(
+                        text = "Enter a magic 6-digit code to access family management features.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Button(
+                        onClick = onOpenFamilyManagement,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Manage Family")
+                    }
+                }
             }
         }
 

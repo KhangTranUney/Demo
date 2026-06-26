@@ -164,6 +164,11 @@
             android:exported="false"
             android:theme="@style/Theme.Demo" />
 
+            <activity
+            android:name="com.example.kinshield.familymanagement.KSFamilyManagementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
+
     </application>
 
 </manifest>
