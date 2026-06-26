@@ -24,8 +24,8 @@ private data class EasterEggAction(
 private val actions = listOf(
     EasterEggAction(
         id = "family_manager_code",
-        label = "Enter Family Manager code",
-        description = "Pair this device as a family device using a code from the Family Manager."
+        label = "Family Manager entered the code",
+        description = "Simulate action that Family Manager enter the code of Family device..."
     ),
 )
 

@@ -27,11 +27,16 @@ class KSLocalStorage(context: Context) {
         get() = prefs.getString(KEY_FAMILY_MANAGER_TOKEN, null)
         set(value) = prefs.edit { putString(KEY_FAMILY_MANAGER_TOKEN, value) }
 
+    var familyDeviceToken: String?
+        get() = prefs.getString(KEY_FAMILY_DEVICE_TOKEN, null)
+        set(value) = prefs.edit { putString(KEY_FAMILY_DEVICE_TOKEN, value) }
+
     companion object {
         private const val PREFS_NAME = "kinshield_prefs"
         private const val KEY_SEEN_WELCOME = "seen_welcome"
         private const val KEY_ROLE = "role"
         private const val KEY_COMPLETE_ONBOARDING = "complete_onboarding"
         private const val KEY_FAMILY_MANAGER_TOKEN = "family_manager_token"
+        private const val KEY_FAMILY_DEVICE_TOKEN = "family_device_token"
     }
 }

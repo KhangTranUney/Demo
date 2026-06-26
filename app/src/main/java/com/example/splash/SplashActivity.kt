@@ -37,10 +37,9 @@ class SplashActivity : ComponentActivity() {
     private fun shouldSkipOnboarding(storage: KSLocalStorage): Boolean {
         val role = storage.role ?: return false
         if (!storage.completeOnboarding) return false
-        return if (role == KSRole.FAMILY_MANAGER) {
-            storage.familyManagerToken != null
-        } else {
-            true
+        return when (role) {
+            KSRole.FAMILY_MANAGER -> storage.familyManagerToken != null
+            KSRole.FAMILY_DEVICE -> storage.familyDeviceToken != null
         }
     }
 }
