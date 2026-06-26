@@ -24,6 +24,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.kinshield.KSBaseActivity
 import com.example.kinshield.data.KSLocalStorage
+import com.example.kinshield.data.KSRole
+import com.example.kinshield.ui.KSTopBar
 
 private data class Tab(val title: String, val icon: ImageVector)
 
@@ -35,16 +37,32 @@ private val tabs = listOf(
 )
 
 class KSHomeActivity : KSBaseActivity() {
+    private lateinit var storage: KSLocalStorage
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        KSLocalStorage(this).completeOnboarding = true
+        storage = KSLocalStorage(this)
+        storage.completeOnboarding = true
         super.onCreate(savedInstanceState)
     }
 
     @Composable
     override fun KSContent() {
         var selectedTab by remember { mutableIntStateOf(0) }
+        val role = remember { storage.role }
 
         Scaffold(
+            topBar = {
+                KSTopBar(
+                    title = "KinShield",
+                    description = role?.let { r ->
+                        when (r) {
+                            KSRole.FAMILY_MANAGER -> "Family Manager"
+                            KSRole.FAMILY_DEVICE -> "Family Device"
+                        }
+                    },
+                    showBack = false
+                )
+            },
             bottomBar = {
                 NavigationBar {
                     tabs.forEachIndexed { index, tab ->
