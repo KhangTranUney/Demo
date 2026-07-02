@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.demo"
+    namespace = "com.example"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -39,7 +39,6 @@ android {
         compose = true
     }
 }
-
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

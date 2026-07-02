@@ -103,7 +103,9 @@ class KSHomeActivity : KSBaseActivity() {
                         startActivity(Intent(this@KSHomeActivity, com.example.kinshield.devicesetup.KSDeviceSetupActivity::class.java))
                     },
                     onControlThisDevice = {
-                        startActivity(Intent(this@KSHomeActivity, com.example.kinshield.familymanagement.KSFamilyManagementActivity::class.java))
+                        val intent = Intent(this@KSHomeActivity, com.example.kinshield.familymanagement.KSFamilyManagementActivity::class.java)
+                        intent.putExtra(com.example.kinshield.familymanagement.KSFamilyManagementActivity.EXTRA_SKIP_AUTH, true)
+                        startActivity(intent)
                     },
                     modifier = Modifier.padding(innerPadding)
                 )

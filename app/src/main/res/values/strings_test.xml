@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_select_role_select_role_default_header">SELECT YOUR ROLE</string>
+    <string name="onboarding_select_role_select_role_default_card_title_based_on_how_you_want">Based on how you want to use KinShield, select the role that suitable for you</string>
+    <string name="onboarding_select_role_select_role_default_selection_label_as_family_owner">As Owner</string>
+    <string name="onboarding_select_role_select_role_default_selection_description_as_family_owner">You can set up a family, add members, and manage protection for them.</string>
+    <string name="onboarding_select_role_select_role_default_selection_label_as_family_member">As Member</string>
+    <string name="onboarding_select_role_select_role_default_selection_description_as_family_member">You can join an existing family and be protected by your family\'s owner.</string>
+    <string name="onboarding_login_login_method_default_card_header">WELCOME TO KINSHIELD</string>
+    <string name="onboarding_login_login_method_default_card_button_login_apple">Continue with Apple</string>
+    <string name="onboarding_login_login_method_default_card_button_login_google">Continue with Google</string>
+    <string name="onboarding_login_login_method_default_card_label_login_email">Or continue with email</string>
+    <string name="onboarding_login_login_method_default_card_input_placeholder_input_email">Enter your email</string>
+    <string name="onboarding_login_login_method_default_button_login_email">Continue with Email</string>
+    <string name="onboarding_login_login_method_disclaimer_terms">By continuing, you agree to our Terms &amp; Conditions</string>
+    <string name="onboarding_login_login_method_error_card_input_hint_input_email_invalid">Email invalid. Try again</string>
+    <string name="onboarding_login_login_method_error_snackbar_email_too_short">Your email is too short</string>
+    <string name="onboarding_verify_verify_email_card_header">VERIFY YOUR EMAIL</string>
+    <string name="onboarding_verify_verify_email_card_title_enter_opt_code">Enter the OTP code has been sent to {email@sample.com}</string>
+    <string name="onboarding_verify_verify_email_card_disble_button_resend_in">Resend in %s</string>
+    <string name="onboarding_verify_verify_email_card_button_resend">Resend code</string>
+    <string name="onboarding_verify_verify_email_card_error_input_hint_opt_three_times">You’ve entered the wrong code %s times. Please double-check your code or request a new one.</string>
+    <string name="onboarding_verify_verify_email_card_error_input_hint_opt_incorrect">Incorrect code. Please check and try again.</string>
+    <string name="onboarding_create_family_card_header">CREATE A NEW FAMILY</string>
+    <string name="onboarding_create_family_default_card_title_give_family_a_name">Give your family a name that’s easy for you to recognize</string>
+    <string name="onboarding_create_family_default_input_placeholder_family_name">Family name</string>
+    <string name="onboarding_create_family_default_card_label_family_country">Family’s country %s</string>
+    <string name="onboarding_add_member_title">ADD NEW MEMBER</string>
+    <string name="onboarding_add_member_add_new_member_card_label_install_kinshield">Install KinShield on member’s device</string>
+    <string name="onboarding_add_member_add_new_member_card_description_install_kinshield">Scan the QR code or share the link to download the app.</string>
+    <string name="onboarding_add_member_add_new_member_card_label_input_code">Input member code to add</string>
+    <string name="onboarding_add_member_add_new_member_card_description_input_code">Ask your family member for their connect code to connect</string>
+    <string name="onboarding_add_member_add_new_member_card_how_does_this_button">How does this code work?</string>
+    <string name="onboarding_add_member_setup_this_device_link">Not ready to add member? <u id="0">Add this device</u></string>
+    <string name="setup_device_later_button">Later</string>
+    <string name="setup_device_name_setup_device_card_header_set_up">SETUP FOR %s</string>
+    <string name="setup_device_name_setup_device_card_title_give_name">Give device a name, you can choose something that easy to remember</string>
+    <string name="setup_device_name_setup_device_card_name_input_placeholder_device_name">Ex: Emma’s phone</string>
+    <string name="comon_next_button">Next</string>
+    <string name="onboarding_share_code_title">Ready to join</string>
+    <string name="onboarding_share_code_subtitle">Share this code to family owner to join their family</string>
+    <string name="onboarding_share_code_share_code_card_subheading">YOUR CONNECTION CODE</string>
+    <string name="onboarding_share_code_card_countdown_hint_exprires">This code expires in 15:00</string>
+    <string name="common_share_code_button">Share code</string>
+    <string name="onboarding_share_code_card_error_hint_code_expirred">Code expired</string>
+    <string name="common_refresh_button">Refresh</string>
+    <string name="onboarding_select_family_country_bottomsheet_header_title">Select family’s country</string>
+    <string name="onboarding_confirm_select_family_country_modal_description">This helps us choose and apply the right protections for your family. This can’t be changed later.</string>
+    <string name="onboarding_selectcountry_search_input_placeholder">Search</string>
+    <string name="onboarding_confirm_select_family_country_modal_title">Set “Vanuatu” as your country?</string>
+    <string name="common_confirm_button">Confirm</string>
+    <string name="common_cancel_button">Cancel</string>
+    <string name="onboarding_done_title">You’re all set</string>
+    <string name="onboarding_done_description_kinshield_protect">KinShield is now protecting you and your family</string>
+    <string name="onboarding_done_enter_kinshield_button">Enter KinShield</string>
+    <string name="error_loading_title">We can’t connect right now</string>
+    <string name="error_loading_description_check_internet">Please check your internet connection and try again</string>
+    <string name="common_refrest_button">Refresh</string>
+    <string name="onboarding_confirm_leave_family_modal_title">Are you sure you want to leave this family?</string>
+    <string name="onboarding_confirm_leave_family_modal_yes_leave_button">Yes, I want to leave</string>
+    <string name="common_no_button">No</string>
+    <string name="onboarding_notification_modal_title">Stay informed with us</string>
+    <string name="onboarding_notification_modal_description">Allow notification to get inform when this device successfully joined a family</string>
+    <string name="onboarding_notification_modal_enable_notification_button">Checking</string>
+    <string name="common_later_button">Later</string>
+    <string name="home_noti_permission_bottomsheet_title">Stay informed with critical alerts</string>
+    <string name="home_noti_permission_bottomsheet_enable_noti_button">Enable notification</string>
+    <string name="noti_permission_modal_title">Stay informed with us</string>
+    <string name="noti_permission_modal_description">Allow notification to get inform when this device successfully joined a family</string>
+    <string name="noti_permission_modal_enable_noti_button">Enable notification</string>
+    <string name="common_log_out_button">Log out</string>
+    <string name="kin_shield_app_share_qr_card_header">KINSHIELD APP</string>
+    <string name="kin_shield_app_share_qr_card_title">Share KinShield App</string>
+    <string name="kin_shield_app_share_qr_card_subtitle">Other can scan this QR code to download KinShield app</string>
+    <string name="common_done_button">Done</string>
+    <string name="onboarding_add_member_add_new_member_card_header">ADD NEW MEMBER</string>
+    <string name="welcome_scam_protection_for_family_title">Scam Protection for Family</string>
+    <string name="welcome_scam_protection_for_family_subtitle">KinShield combines smart technology and family support to help loved ones stay safe together.</string>
+    <string name="welcome_screen_start_button">Start</string>
+    <string name="welcome_protect_before_scam_strike_title">Protection Before Scams Strike</string>
+    <string name="welcome_protect_before_scam_strike_subtitle">Get alerts and protection across calls, messages, websites, and more before threats reach your family.</string>
+    <string name="welcome_stay_safe_stay_private_title">Stay Safe Stay Private</string>
+    <string name="welcome_stay_safe_stay_private_subtitle">KinShield uses encryption and privacy-preserving technology so families can protect each other without sharing personal information.</string>
+    <string name="onboarding_select_role_select_role_card_label_as_family_owner">As Owner</string>
+    <string name="onboarding_select_role_select_role_card_description_as_family_owner">You can set up a family, add members, and manage protection for them.</string>
+    <string name="common_next_button">Next</string>
+    <string name="onboarding_login_login_method_card_login_email_button">Continue with Email</string>
+    <string name="onboarding_verify_email_title">VERIFY YOUR EMAIL</string>
+    <string name="onboarding_verify_verify_email_card_resend_button">Resend code</string>
+    <string name="onboarding_verify_loading_title">Checking</string>
+    <string name="onboarding_verify_snackbar_successful_code_send">A new code has been sent, please check your email.</string>
+    <string name="onboarding_create_family_title">CREATE A NEW FAMILY</string>
+    <string name="onboarding_create_family_card_name_input_placeholder_family_name">Family name</string>
+    <string name="onboarding_create_family_card_label_family_country">Family’s country Vietnam</string>
+    <string name="onboarding_create_family_card_name_input_error_hint_family_name_characters">Family name must contain 2 to 32 characters.</string>
+    <string name="onboarding_how_get_this_code_bottomsheet_header_title">How to get this code?</string>
+    <string name="onboarding_how_get_this_code_bottomsheet_title">Download and open KinShield app, finish the initial setup as Family member to get the code</string>
+    <string name="onboarding_how_get_this_code_how_to_download_app_card_title">How to download</string>
+    <string name="onboarding_how_get_this_code_how_to_download_app_card_desscription_scan_rq">Scan this QR code or access the link below to download the KinShield app.</string>
+    <string name="onboarding_how_get_this_code_how_to_download_app_card_download_button">Share download link</string>
+    <string name="setup_device_name_setup_device_card_header_add_this_device">ADD THIS DEVICE</string>
+    <string name="onboarding_add_member_add_new_member_card_otp_input_error_hint_somethings">Something went wrong. Please try again. (Code: {{Error Code}})</string>
+    <string name="onboarding_add_member_add_new_member_card_otp_input_error_hint_incorrect">Incorrect code. Please check and try again.</string>
+    <string name="onboarding_add_member_add_new_member_card_otp_input_error_hint_expired">This code has expired. Request a new one.</string>
+    <string name="onboarding_add_member_add_new_member_card_otp_input_error_hint_wrong_x_times">You’ve entered the wrong code {x} times. Please try again in {x} minutes.</string>
+    <string name="title">This device is already in a family</string>
+    <string name="desc">To join your family you need to leave this current one first</string>
+    <string name="onboarding_already_joined_leave_and_create_button">Leave and continue</string>
+    <string name="onboarding_setup_device_title">ADD THIS DEVICE</string>
+    <string name="onboarding_confirm_leave_family_modal_description_leave_remove_data">Once you leaved, this device and all related data will be permanently removed from this family.</string>
+    <string name="onboarding_already_joined_title">This device is already in a family</string>
+    <string name="onboarding_already_joined_description_to_join_another">To join your family you need to leave this current one first</string>
+    <string name="onboarding_already_joined_description_remove_this_device">Do you want to remove this device from that family?</string>
+    <string name="onboarding_all_set_title">You’re all set</string>
+    <string name="onboarding_all_set_description">KinShield is now protecting you and your family</string>
+    <string name="home_device_added_toast">{device-name}’s device added successfully</string>
+    <string name="setup_device_mode_select_mode_card_header">PROTECTION MODE</string>
+    <string name="setup_device_mode_select_mode_card_title">Base on who will use this device, you can select the suitable mode</string>
+    <string name="setup_device_mode_select_mode_card_label_essentials_mode">Essentials mode</string>
+    <string name="setup_device_mode_select_mode_card_description_essentials_mode">Balanced protection for everyday use. Best for general users</string>
+    <string name="block_scam_calls">Block scam calls</string>
+    <string name="setup_device_mode_select_mode_card_label_full_mode">Full mode</string>
+    <string name="setup_device_mode_select_mode_card_description_full_mode">Advanced protection across calls, messages, and web browsing</string>
+    <string name="onboarding_select_protection_mode_block_scam_calls_card_label_block_scam_calls">Block scam calls</string>
+    <string name="setup_device_mode_select_mode_card_label_value_block_scam_website">Block scam websites</string>
+    <string name="setup_device_mode_select_mode_card_label_value_block_scam_messages">Block scam messages</string>
+    <string name="setup_device_mode_select_mode_card_label_kid_mode">Kid mode</string>
+    <string name="setup_device_mode_select_mode_card_description_kid_mode">Extra protection with communication limited to trusted contacts</string>
+    <string name="setup_device_mode_select_mode_card_label_value_everythings_in_full_mode">Everything in Full mode</string>
+    <string name="setup_device_mode_select_mode_card_label_value_only_trusted_contacts">Only trusted contacts can call or be contacted</string>
+    <string name="setup_device_mode_select_mode_card_label_value_limit_trust_contacts">Only trusted contacts can call or be contacted</string>
+    <string name="settings_this_device_card_title">THIS DEVICE</string>
+    <string name="settings_this_device_card_label_noti">Notification settings</string>
+    <string name="settings_this_device_card_label_floating_button">Floating button</string>
+    <string name="settings_this_device_card_label_scam_engien">SMS settings</string>
+    <string name="settings_this_device_card_label_call_settings">Call settings</string>
+    <string name="settings_family_card_label_family">Devices</string>
+    <string name="settings_family_card_description_x_device">5 devices</string>
+    <string name="settings_family_card_label_phone_blocklist">Phone Blocklist</string>
+    <string name="settings_family_card_description_empty">Empty list</string>
+    <string name="settings_family_card_label_phone_whitelist">Phone Whitelist</string>
+    <string name="home_add_device_button">Device</string>
+    <string name="media_frame_privacy_protection_without_compromise_title">Protection Without Compromise</string>
+    <string name="media_frame_privacy_protection_without_compromise_subtitle">KinShield users zero-trust approach to handle your data. Here how your data is shielded.  </string>
+    <string name="media_frame_privacy_dont_know_who_you_are_title">We Don’t Know Who You Are</string>
+    <string name="media_frame_privacy_dont_know_who_you_are_subtitle">The email address you submit during account creation will be anonymized in storage, and this process will also apply to any other data that could reveal your identity.</string>
+    <string name="media_frame_privacy_information_redacted_title">Personal Information Is Redacted</string>
+    <string name="media_frame_privacy_information_redacted_subtitle">Phone numbers, emails, accounts, and names are replaced with generic tags, and the process is fully automated without human input. </string>
+    <string name="media_frame_privacy_your_data_encrypted_title">Your data is Always Encrypted</string>
+    <string name="media_frame_privacy_your_data_encrypted_subtitle">Your data is encrypted, so KinShield cannot access the original content. We retain data only briefly to minimize exposure risk. </string>
+    <string name="media_frame_privacy_data_on_device_title">Keep Your Data On Your device</string>
+    <string name="media_frame_privacy_data_on_device_subtitle">Stay informed with critical alerts</string>
+    <string name="media_frame_privacy_family_privacy_title">Family Protect With Privacy</string>
+    <string name="media_frame_privacy_family_privacy_subtitle">Family Owner get threat alerts while private content and browsing history remain hidden without permission.</string>
+    <string name="home_introduction_introducing_header">INTRODUCTION</string>
+    <string name="home_introduction_introducing_title">How KinShield protect you and your family</string>
+    <string name="home_introduction_introducing_watch_button">Watch</string>
+    <string name="home_introduction_introducing_watched_button">Watched</string>
+    <string name="home_introduction_privacy_header">PRIVACY</string>
+    <string name="home_introduction_privacy_title">How KinShield protect your privacy</string>
+    <string name="home_introduction_privacy_view_button">View</string>
+    <string name="home_introduction_privacy_viewed_button">Viewed</string>
+    <string name="common_replay_button">Replay</string>
+    <string name="media_viewer_understood_button">Understood</string>
+    <string name="home_to_do_card_label_to_do_name">To do name</string>
+    <string name="home_to_do_card_description_to_do_name">To do sub</string>
+    <string name="home_to_do_card_label_noti">Enable notification</string>
+    <string name="home_to_do_card_description_noti">Stay up to date with us</string>
+    <string name="home_to_do_card_label_add_this_device">Add this device</string>
+    <string name="home_to_do_card_description_add_this_device">Link to your family to enable protection</string>
+    <string name="home_to_do_card_label_allow_call_protection">Allow Call protection</string>
+    <string name="home_to_do_card_description_allow_call_protection">To protect your calls</string>
+    <string name="home_to_do_card_label_setup_member_device">Setup member device</string>
+    <string name="home_to_do_card_description_allow_call_permission">To apply family protection</string>
+    <string name="home_to_do_card_label_allow_safe_browsing">Allow Safe Browsing</string>
+    <string name="home_to_do_card_description_allow_safe_browsing">Sub text</string>
+    <string name="home_to_do_card_label_enable_safari_extension">Enable Safari extension</string>
+    <string name="home_to_do_card_description_enable_safari_extension">Sub text</string>
+    <string name="home_to_do_card_label_enable_link_check">Enable link check</string>
+    <string name="home_to_do_card_description_enable_link_check">Allow app to check the link you click before open to prevent malicious</string>
+    <string name="home_to_do_card_label_allow_device_permission">Allow device permission</string>
+    <string name="home_to_do_card_description_allow_device_permission">To allow KinShield protect this device</string>
+    <string name="home_to_do_card_label_setup_family_blocklist">Setup Family Blocklist</string>
+    <string name="home_to_do_card_description_setup_family_blocklist">Sub text</string>
+    <string name="home_to_do_card_label_setup_family_whitelist">Setup Family Whitelist</string>
+    <string name="home_to_do_card_description_setup_family_whitelist">Sub text</string>
+    <string name="home_to_do_card_label_allow_floating_button">Allow Floating button</string>
+    <string name="home_to_do_card_description_allow_floating_button">Sub text</string>
+    <string name="home_to_do_card_label_add_member_device">Add member device</string>
+    <string name="home_to_do_card_description_add_member_device">Sub text</string>
+    <string name="home_to_do_card_label_allow_sms">Allow SMS detective</string>
+    <string name="home_to_do_card_description_allow_sms">Sub text</string>
+    <string name="display_over_app_permission_header_title">How to give permission?</string>
+    <string name="display_over_app_permission_title">Enter Setting &gt; Display over other app &gt; Choose “KinShield” &gt; Enable toggle</string>
+    <string name="display_over_other_app">Display over other app</string>
+    <string name="floating_button_floating_button_settings_floating_permission_open_settings_button">Open settings</string>
+    <string name="common_enable_noti_button">Enable notification</string>
+    <string name="confirm_log_out_title">Sign out</string>
+    <string name="confirm_log_out_subtitle">Are you sure you want to sign out?</string>
+    <string name="common_sign_out_button">Sign out</string>
+    <string name="settings_sign_out_snackbar_error_connection">Can not sign out. Check your connection</string>
+    <string name="settings_feedback_form_header_sheet">App feedback</string>
+    <string name="settings_feedback_form_what_you_like_not_like_header_title">What do you like/not like about KinShield?</string>
+    <string name="settings_feedback_form_what_you_like_not_like_suggestion_label">Suggestion</string>
+    <string name="settings_feedback_form_what_you_like_not_like_bug_report_label">Bug Report</string>
+    <string name="settings_feedback_form_what_you_like_not_like_uxui_label">UI/UX</string>
+    <string name="settings_feedback_form_what_you_like_not_like_check_result_label">Scam Check Result </string>
+    <string name="settings_feedback_form_what_you_like_not_like_general_label">General feedback</string>
+    <string name="settings_feedback_form_feedback_input_placeholder_feedback">Share us your thought</string>
+    <string name="common_submit_button">Submit</string>
+    <string name="settings_feedback_form_snackbar_successful">Successfully submit your feedback</string>
+    <string name="settings_feedback_form_snackbar_error_error">Something went wrong, try again!</string>
+    <string name="settings_feedback_form_snackbar_error_connection">No internet connection. Please try again when online.</string>
+    <string name="settings.frequently_asked_questions.header">Frequently asked questions</string>
+    <string name="settings_phone_blocklist_blocklist_settings_header_title">Blocklist settings</string>
+    <string name="settings_phone_blocklist_blocklist_settings_kinshield_blocklist_card_header">KINSHIELD BLOCKLIST</string>
+    <string name="settings_phone_blocklist_blocklist_settings_kinshield_blocklist_card_title_help_protect_from_scam">We help protect your from scam and spam automatically</string>
+    <string name="settings_phone_blocklist_blocklist_settings_kinshield_blocklist_card_label_auto_scam">Auto-block scam calls</string>
+    <string name="settings_phone_blocklist_blocklist_settings_kinshield_blocklist_card_label_auto_spam">Auto-block spam calls</string>
+    <string name="settings_phone_blocklist_blocklist_settings_family_blocklist_card_header">FAMILY BLOCKLIST</string>
+    <string name="settings_phone_blocklist_blocklist_settings_family_blocklist_card_label_without_permission">Allow member add without approve permission</string>
+    <string name="settings_phone_blocklist_blocklist_settings_family_blocklist_card_title_allows_calls_from_family_contact">Allow calls from family devices’s contacts</string>
+    <string name="settings_phone_blocklist_blocklist_settings_family_blocklist_card_subtitle_allows_calls_from_family_contact">These numbers will ring through even if they match other block rules </string>
+    <string name="settings_phone_blocklist_blocklist_settings_family_blocklist_card_label_sync_this_device_contact">This device contact is not sync. <u id="0">Sync now</u></string>
+    <string name="permission_allow_contact_header">How to allow access contact?</string>
+    <string name="permission_allow_contact_description">Enter Setting &gt; Contact permission &gt; Choose allow</string>
+    <string name="permission_allow_call_logs_button">Open settings</string>
+    <string name="settings_phone_whitelist_header_title">Phone whitelist</string>
+    <string name="settings_phone_whitelist_title">Device will only can contact numbers from this WhiteList</string>
+    <string name="settings_phone_whitelist_search_input_placeholder_search">Search</string>
+    <string name="common_add_new_button">Add new </string>
+    <string name="settings_phone_blocklist_empty_title_empty">No block numbers added</string>
+    <string name="settings_phone_blocklist_empty_description_empty">Your blocked number will appear here after you added it</string>
+    <string name="settings_phone_whitelist_import_from_contact_button">Import from contact</string>
+    <string name="settings_phone_whitelist_add_whitelist_add_card_header">ADD TO WHITELIST</string>
+    <string name="settings_phone_blocklist_add_whitelist_add_card_phone_input_label">Phone number</string>
+    <string name="settings_phone_blocklist_add_whitelist_add_card_phone_input_placeholder_enter_number">Enter phone number</string>
+    <string name="settings_phone_blocklist_add_whitelist_add_card_label_input_label">Label</string>
+    <string name="settings_phone_blocklist_add_whitelist_add_card_abel_input_placeholder_sale">e.g Sale marketing</string>
+    <string name="settings_phone_whitelist_import_whitelist_title">Select the phone numbers that you want to add to whitelist</string>
+    <string name="settings_phone_whitelist_import_whitelist_select_all_label">Select all</string>
+    <string name="common_all_button">Add</string>
+    <string name="settings_phone_whitelist_import_whitelist_empty_title_empty">Empty contact list</string>
+    <string name="settings_phone_whitelist_import_whitelist_empty_description_empty">There is no numbers to add in your whitelist. Try again later.</string>
+    <string name="settings_phone_whitelist_add_whitelist_allow_access_contact_header_title">How to allow access contact?</string>
+    <string name="settings_phone_whitelist_add_whitelist_allow_access_contact_title">Enter Setting &gt; Contact permission &gt; Choose allow</string>
+    <string name="settings_phone_whitelist_add_whitelist_allow_access_contact_open_settings_button">Open settings</string>
+    <string name="blocklist_delete_confirm_delete_confirm_title">Are you sure you want to delete this numbers?</string>
+    <string name="blocklist_delete_confirm_delete_confirm_description">This action can not be undone</string>
+    <string name="common_delete_button">Delete</string>
+    <string name="settings_help_center_card_title">HELP CENTER</string>
+    <string name="settings_this_device_card_label_faq">Frequently asked questions</string>
+    <string name="settings_this_device_card_label_request_support">Request support</string>
+    <string name="settings_notification_settings_error_error_title">Network error!</string>
+    <string name="settings_notification_settings_error_error_description">Make sure wifi or cellular data is turned on and then try again.</string>
+    <string name="common_try_again_button">Try again</string>
+    <string name="settings_phone_whitelist_search_input_placeholder_">Search</string>
+    <string name="common_add_button">Add</string>
+    <string name="whitelist_import_contact_select_phone_numbers_header_title">Select the phone numbers that you want to add to whitelist</string>
+    <string name="whitelist_successfully_state_statusbar_description">Successfully add whitelist</string>
+    <string name="whitelist_successfully_state_add_x_numbers_statusbar_description">%s phone numbers added</string>
+    <string name="whitelist_successfully_state_add_x_skipped_y_numbers_statusbar_description">{xx} phone numbers added, {yy} skipped</string>
+    <string name="whitelist_invalid_state_statusbar_description">No valid phone numbers to import</string>
+    <string name="contact_permission">Contact permission</string>
+    <string name="allow_contact_access">Allow Contact Access</string>
+    <string name="whitelist_import_contact_title_header">Select the phone numbers that you want to add to blocklist</string>
+    <string name="settings_phone_blocklist_import_blocklist_select_button">Select</string>
+    <string name="settings_phone_blocklist_header_title">Phone Blocklist</string>
+    <string name="settings_phone_blocklist_title">Blocked numbers will never be able to call you and your family. This list will sync to family devices when they’re online and active.t</string>
+    <string name="settings_phone_blocklist_blocked_pattern_card_title">Blocked pattern</string>
+    <string name="settings_phone_blocklist_blocked_pattern_card_subtitle_add_x">Added 3/5</string>
+    <string name="settings_phone_blocklist_subheading_number_list">Blocked numbers</string>
+    <string name="settings_phone_blocklist_search_input_placeholder_search">Search</string>
+    <string name="settings_phone_blocklist_subheading_list_cant_delete">Blocked numbers (Only owner can delete)</string>
+    <string name="settings_phone_blocklist_blocked_pattern_card_subtitle_emtpy">Empty list</string>
+    <string name="settings_phone_blocklist_customize_settings_button">Customize settings</string>
+    <string name="settings_phone_blocklist_block_pattern_header_title">Blocked pattern</string>
+    <string name="settings_phone_blocklist_block_pattern_title">Phone numbers matching this pattern will be blocked on all devices in the family. A family can have up to 5 patterns.</string>
+    <string name="settings_phone_blocklist_block_pattern_add_new_pattern_button">Add new pattern</string>
+    <string name="settings_phone_blocklist_block_pattern_subheading_number_list">*Only owner can delete</string>
+    <string name="settings_phone_blocklist_block_pattern_empty_title_empty">No pattern added</string>
+    <string name="settings_phone_blocklist_block_pattern_empty_description_empty">Your numbers block pattern will appear here after you added it</string>
+    <string name="blocklist_add_new_number_add_to_blocklist_button_add_to_blocklist">ADD TO BLOCKLIST</string>
+    <string name="blocklist_add_to_blocklist_numbers_label_numbers">Phone number</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_phone_input_placeholder_enter_number">Enter phone number</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_phone_input_see_all_button">See all</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_title_why_block">Why do want to block this call?</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_label_why_scam">Scam</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_label_why_spam">Spam</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_label_why_other">Other</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_checkbox_label_contribute">Contribute to family blocklist</string>
+    <string name="settings_phone_blocklist_select_block_pattern_pattern_suggested_card_header">SUGGESTED BLOCK PATTERN</string>
+    <string name="settings_phone_blocklist_select_block_pattern_pattern_suggested_card_title">This list of suggested block patterns is created by KinShield based on your country</string>
+    <string name="blocklist_suggest_pattern_service_label_service">Service</string>
+    <string name="settings_phone_blocklist_select_block_pattern_pattern_suggested_card_select_button">Select</string>
+    <string name="blocklist_suggest_pattern_sale_label_sale">Sale</string>
+    <string name="blocklist_suggest_pattern_call_center_label_call_center">Call center</string>
+    <string name="settings_phone_blocklist_select_block_pattern_pattern_suggested_card_empty_title_empty">No available pattern</string>
+    <string name="settings_phone_blocklist_select_block_pattern_pattern_suggested_card_empty_description_empty">There is no pattern supports for your family country</string>
+    <string name="settings_call_settings_header_title">Call settings</string>
+    <string name="settings_call_settings_enable_protect_calls_card_title">Protect your calls</string>
+    <string name="settings_call_settings_enable_protect_calls_card_description_detect_scam_calls">Enable these permissions to detect scam calls and keep your calls safe</string>
+    <string name="common_enable_now_button">Enable now</string>
+    <string name="settings_call_settings_call_identification_card_header">CALL IDENTIFICATION</string>
+    <string name="settings_call_settings_call_identification_card_title_app_will_show_label">App will show label if incoming calls are identified by KinShield Community</string>
+    <string name="settings_call_settings_call_identification_card_label_scam_call">Scam call</string>
+    <string name="blocklist_block_pattern_blocklist_card_title_blocklist">BLOCKLIST</string>
+    <string name="settings_call_settings_blocklist_card_title">This device also apply {family name}’s blocklist <u id="0">Manage</u></string>
+    <string name="settings_call_settings_blocklist_card_subheading_this_device_blocklist">This device blocklist (100)</string>
+    <string name="settings_call_settings_blocklist_card_this_device_blocklist_view_all_button">View all</string>
+    <string name="settings_call_settings_call_identification_card_label_spam_call">Spam call</string>
+    <string name="settings_call_settings_call_identification_card_empty_title_call_identify_unavailable">This feature is available</string>
+    <string name="settings_call_settings_call_identification_card_empty_description_call_identify_unavailable">Only supports devices with iOS 18 or later</string>
+    <string name="settings_call_settings_blocklist_card_header">BLOCKLIST</string>
+    <string name="settings_call_settings_blocklist_card_empty_title_this_device_blocklist_empty">No block numbers added</string>
+    <string name="settings_call_settings_blocklist_card_empty_description_this_device_blocklist_empty">Your blocked number will appear here after you added it</string>
+    <string name="blocklist_import_contact_description">Select the phone numbers that you want to add to blocklist</string>
+    <string name="settings_call_settings_this_device_blocklist_title">This list of phone numbers will never be able to call you and applies only to this device.</string>
+    <string name="settings_call_settings_this_device_blocklist_search_input_placeholder_search">Search</string>
+    <string name="settings_call_settings_this_device_blocklist_header_title">This Device Blocklist</string>
+    <string name="blocklist_unsuccessfully_state_statusbar_description">Can not save your settings. Please check your connection.</string>
+    <string name="settings_phone_blocklist_allow_protect_calls_header_title">Protect your calls</string>
+    <string name="settings_phone_blocklist_allow_protect_calls_title">Enter Setting &gt; Enable KinShield Community - Spam toggle</string>
+    <string name="settings_phone_blocklist_allow_protect_calls_open_settings_button">Open settings</string>
+    <string name="settings_phone_blocklist_comfirm_delete_title">Are you sure you want to delete this numbers?</string>
+    <string name="settings_phone_blocklist_comfirm_delete_description">This action can not be undone</string>
+    <string name="blocklist_add_new_button">Add new </string>
+    <string name="blocklist_customize_settings_button">Customize settings</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_phone_input_label">Phone number</string>
+    <string name="blocklist_input_number_placeholder">Enter phone number</string>
+    <string name="settings_phone_blocklist_add_blocklist_add_card_phone_input_get_from_history_button">Get from Call history</string>
+    <string name="settings_phone_blocklist_add_blocklist_allow_access_phone_logs_header_title">How to allow access phone call logs?</string>
+    <string name="settings_phone_blocklist_add_blocklist_allow_access_phone_logs_title">Enter Setting &gt; Call logs permission &gt; Choose allow</string>
+    <string name="settings_phone_blocklist_add_blocklist_allow_access_phone_logs_title_open_settings_button">Open settings</string>
+    <string name="blocklist_successfully_state_statusbar_description">Successfully block numbers</string>
+    <string name="common_add_button_add">Add</string>
+    <string name="settings_family_devices_header_title">Family devices (4)</string>
+    <string name="settings_family_devices_title">The list of device that joined your family, you can control this list by add new, setup protection mode, check device status or remove here</string>
+    <string name="settings_family_devices_empty_title_empty">No device add</string>
+    <string name="settings_family_devices_empty_description_empty">Your family device will show here after you added</string>
+    <string name="settings_family_devices_add_device_button">Add device</string>
+    <string name="text">The list of device that joined your family, you can control this list by add new, setup protection mode, check device status or remove here</string>
+    <string name="settings_family_devices_title_need_set_up">Need setup</string>
+    <string name="settings_family_devices_card_setup_button">Set up</string>
+    <string name="settings_family_devices_title_protected">Protected</string>
+    <string name="settings_family_devices_limit_reached_title">Limit reached!</string>
+    <string name="settings_family_devices_limit_reached_subtitle">Your need to upgrade your plan to add more device</string>
+    <string name="common_upgrade_button">Upgrade</string>
+    <string name="settings_message_app_header_title">Message app</string>
+    <string name="settings_message_app_apps_card_header">APPS</string>
+    <string name="settings_message_app_apps_card_ltitle_app_will_filter">App will filter SMS under...</string>
+    <string name="settings_message_app_enable_message_app_card_title">Enable Message App</string>
+    <string name="settings_message_app_enable_message_app_card_description">Allow KinShield to scan and alerts messages for scam risks</string>
+    <string name="settings_message_app_enable_message_app_card_enable_button">Enable now</string>
+    <string name="settings_sms_settings_filter_settings_card_header">FILTERING SETTINGS</string>
+    <string name="settings_sms_settings_filter_settings_card_label_filter_scam_sms">Scam</string>
+    <string name="blocklist_phone_blocklist_service_card_label_service">Automatically filter/alert when detect SMS content can be scam </string>
+    <string name="settings_sms_settings_filter_settings_card_label_filter_spam_sms">Spam</string>
+    <string name="settings_sms_settings_enable_sms_settings_card_title">Enable SMS filtering</string>
+    <string name="settings_sms_settings_enable_sms_settings_card_description">Enable description</string>
+    <string name="settings_sms_settings_enable_sms_settings_card_enable_button">Enable now</string>
+    <string name="protect_sms_card_header">ALLOW PERMISSION</string>
+    <string name="protect_sms_card_title">Protect your messages</string>
+    <string name="protect_sms_card_subtitle">Allow KinShield to scan messages and keep you safe from scams</string>
+    <string name="common_set_up_later_button">Set up now</string>
+    <string name="settings_sms_settings_ettings_enable_browsing_card_title">Enable title</string>
+    <string name="settings_sms_settings_ettings_enable_browsing_card_subtitle">Enable description</string>
+    <string name="onboarding_verify_verify_email_card_error_input_hint_opt_limited_send_times">You reached the daily limit to send code. Please try again in 24hours.</string>
+    <string name="commion_share_link_button">Share link</string>
+    <string name="settings_browsing_settings_title_header">Browsing settings</string>
+    <string name="allow_permisson_web_card_label_default_browser">Link check</string>
+    <string name="allow_permisson_web_card_description_default_browser">Help protect you when you click on link</string>
+    <string name="allow_permisson_web_card_label_dns_protection">Safe browsing</string>
+    <string name="allow_permisson_web_card_description_dns_protection">Always protect malicious website</string>
+    <string name="settings_sms_settings_settings_enable_browsing_card_title">Protect your browsing</string>
+    <string name="settings_sms_settings_settings_enable_browsing_card_subtitle">Enable Safari Extension or DNS protection to block scam and unsafe websites</string>
+</resources>

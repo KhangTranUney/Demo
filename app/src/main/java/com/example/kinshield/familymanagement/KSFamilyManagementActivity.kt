@@ -37,18 +37,29 @@ import com.example.ui.theme.DemoTheme
 class KSFamilyManagementActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val skipAuth = intent?.getBooleanExtra(EXTRA_SKIP_AUTH, false) ?: false
         enableEdgeToEdge()
         setContent {
             DemoTheme {
-                KSFamilyManagementScreen(onClose = { finish() })
+                KSFamilyManagementScreen(
+                    skipAuth = skipAuth,
+                    onClose = { finish() }
+                )
             }
         }
+    }
+
+    companion object {
+        const val EXTRA_SKIP_AUTH = "skip_auth"
     }
 }
 
 @Composable
-private fun KSFamilyManagementScreen(onClose: () -> Unit) {
-    var authenticated by remember { mutableStateOf(false) }
+private fun KSFamilyManagementScreen(
+    skipAuth: Boolean,
+    onClose: () -> Unit
+) {
+    var authenticated by remember { mutableStateOf(skipAuth) }
 
     if (authenticated) {
         FamilyManagementContent(onClose = onClose)

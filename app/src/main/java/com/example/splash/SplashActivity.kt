@@ -11,6 +11,7 @@ import com.example.kinshield.data.KSLocalStorage
 import com.example.kinshield.data.KSRole
 import com.example.kinshield.home.KSHomeActivity
 import com.example.kinshield.onboarding.KSOnboardingActivity
+import com.example.teststring.TestStringActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : ComponentActivity() {
@@ -23,12 +24,7 @@ class SplashActivity : ComponentActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             isReady = true
-            val storage = KSLocalStorage(this)
-            val target = if (shouldSkipOnboarding(storage)) {
-                KSHomeActivity::class.java
-            } else {
-                KSOnboardingActivity::class.java
-            }
+            val target = toTestString()
             startActivity(Intent(this, target))
             finish()
         }, 250L)
@@ -41,5 +37,18 @@ class SplashActivity : ComponentActivity() {
             KSRole.FAMILY_MANAGER -> storage.familyManagerToken != null
             KSRole.FAMILY_DEVICE -> storage.familyDeviceToken != null
         }
+    }
+
+    private fun toKinShield(): Class<*> {
+        val storage = KSLocalStorage(this)
+        return if (shouldSkipOnboarding(storage)) {
+            KSHomeActivity::class.java
+        } else {
+            KSOnboardingActivity::class.java
+        }
+    }
+
+    private fun toTestString(): Class<*> {
+        return TestStringActivity::class.java
     }
 }

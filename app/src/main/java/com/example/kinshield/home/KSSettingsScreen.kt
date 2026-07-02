@@ -113,7 +113,7 @@ fun KSSettingsScreen(
         if (role == KSRole.FAMILY_MANAGER) {
             Card(modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    SectionHeader("Manage Family Devices")
+                    SectionHeader("Manage Family")
                     SectionItem("Devices") { /* TODO */ }
                 }
             }
