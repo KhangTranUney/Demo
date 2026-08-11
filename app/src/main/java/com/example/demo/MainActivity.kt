@@ -23,8 +23,8 @@ import com.example.demo.customtab.CustomTabActivity
 import com.example.demo.dialog.LoadingDialogActivity
 import com.example.demo.font.FontDesignSystemActivity
 import com.example.demo.font.FontTestActivity
-import com.example.demo.snackbar.SnackbarActivity
 import com.example.demo.sms.SmsActivity
+import com.example.demo.snackbar.SnackbarActivity
 import com.example.demo.ui.BackTopBar
 import com.example.ui.theme.DemoTheme
 
@@ -103,14 +103,23 @@ fun MainScreen(modifier: Modifier = Modifier) {
         }
         Button(
             onClick = {
-//                context.startActivity(Intent(context, FontTestActivity::class.java))
-                context.startActivity(Intent(context, FontDesignSystemActivity::class.java))
+                context.startActivity(Intent(context, FontTestActivity::class.java))
             },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp)
         ) {
             Text("Open Variable Font Test")
+        }
+        Button(
+            onClick = {
+                context.startActivity(Intent(context, FontDesignSystemActivity::class.java))
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+        ) {
+            Text("Open Font Design System")
         }
     }
 }
