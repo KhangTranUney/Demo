@@ -66,6 +66,10 @@
             android:exported="false"
             android:theme="@style/Theme.Demo" />
         <activity
+            android:name="${applicationId}.font.FontDesignSystemActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo" />
+        <activity
             android:name="com.example.teststring.TestStringActivity"
             android:exported="false"
             android:theme="@style/Theme.Demo" />

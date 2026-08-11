@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.demo.customtab.CustomTabActivity
 import com.example.demo.dialog.LoadingDialogActivity
+import com.example.demo.font.FontDesignSystemActivity
 import com.example.demo.font.FontTestActivity
 import com.example.demo.snackbar.SnackbarActivity
 import com.example.demo.sms.SmsActivity
@@ -102,7 +103,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
         }
         Button(
             onClick = {
-                context.startActivity(Intent(context, FontTestActivity::class.java))
+//                context.startActivity(Intent(context, FontTestActivity::class.java))
+                context.startActivity(Intent(context, FontDesignSystemActivity::class.java))
             },
             modifier = Modifier
                 .fillMaxWidth()

@@ -27,9 +27,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -77,6 +79,7 @@ private fun FontTestScreen() {
     val fontFamily = remember(selectedFont.resourceId, fontWeight) {
         variableFontFamily(
             resourceId = selectedFont.resourceId,
+            weight = fontWeight.toInt(),
             style = selectedFont.style,
         )
     }
@@ -118,8 +121,6 @@ private fun FontTestScreen() {
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 fontFamily = fontFamily,
                 fontSize = 72.sp,
-                fontWeight = FontWeight(fontWeight.toInt()),
-                fontStyle = selectedFont.style,
             )
         }
     }
@@ -150,12 +151,15 @@ private fun FontTestScreen() {
     }
 }
 
+@OptIn(ExperimentalTextApi::class)
 private fun variableFontFamily(
     @FontRes resourceId: Int,
+    weight: Int,
     style: FontStyle,
 ): FontFamily = FontFamily(
     Font(
         resId = resourceId,
         style = style,
+        variationSettings = FontVariation.Settings(FontWeight(weight), style),
     )
 )
