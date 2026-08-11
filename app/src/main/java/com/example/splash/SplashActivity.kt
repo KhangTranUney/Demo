@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.demo.MainActivity
 import com.example.kinshield.data.KSLocalStorage
 import com.example.kinshield.data.KSRole
 import com.example.kinshield.home.KSHomeActivity
@@ -24,7 +25,7 @@ class SplashActivity : ComponentActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             isReady = true
-            val target = toTestString()
+            val target = toDemo()
             startActivity(Intent(this, target))
             finish()
         }, 250L)
@@ -50,5 +51,9 @@ class SplashActivity : ComponentActivity() {
 
     private fun toTestString(): Class<*> {
         return TestStringActivity::class.java
+    }
+
+    private fun toDemo(): Class<*> {
+        return MainActivity::class.java
     }
 }
