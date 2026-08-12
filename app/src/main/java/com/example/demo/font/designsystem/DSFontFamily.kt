@@ -11,6 +11,7 @@ import com.example.R
 interface DSFontFamily {
     fun heading(fontWeight: FontWeight): FontFamily
     fun body(fontWeight: FontWeight): FontFamily
+    fun monospace(fontWeight: FontWeight): FontFamily
 }
 
 @OptIn(ExperimentalTextApi::class)
@@ -18,6 +19,7 @@ class DSFontFamilyImpl(private val useSystemFonts: Boolean) : DSFontFamily {
 
     private val headingFontResId = R.font.zalando_sans_variable_wdth_wght
     private val bodyFontResId = R.font.zalando_sans_variable_wdth_wght
+    private val monospaceFontResId = R.font.zalando_sans_variable_wdth_wght
 
     override fun heading(fontWeight: FontWeight): FontFamily {
         return createFontFamily(headingFontResId, fontWeight)
@@ -25,6 +27,10 @@ class DSFontFamilyImpl(private val useSystemFonts: Boolean) : DSFontFamily {
 
     override fun body(fontWeight: FontWeight): FontFamily {
         return createFontFamily(bodyFontResId, fontWeight)
+    }
+
+    override fun monospace(fontWeight: FontWeight): FontFamily {
+        return createFontFamily(monospaceFontResId, fontWeight)
     }
 
     private fun createFontFamily(fontResId: Int, fontWeight: FontWeight): FontFamily {

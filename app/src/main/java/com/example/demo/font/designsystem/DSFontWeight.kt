@@ -3,6 +3,10 @@ package com.example.demo.font.designsystem
 import android.content.Context
 import androidx.compose.ui.text.font.FontWeight
 
+/**
+ * Auto generated
+ */
+
 interface DSFontWeight {
     val headingMedium: FontWeight
     val headingSemiBold: FontWeight

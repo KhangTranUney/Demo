@@ -4,6 +4,10 @@ import android.content.Context
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
+/**
+ * Auto generated
+ */
+
 interface DSFontSize {
     val lineHeightHeadingXxl: TextUnit
     val lineHeightHeadingXl: TextUnit
